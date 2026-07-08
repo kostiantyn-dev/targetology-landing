@@ -76,6 +76,64 @@ document.querySelectorAll("[data-case-lab]").forEach((lab) => {
   render();
 });
 
+document.querySelectorAll("[data-review-lab]").forEach((lab) => {
+  const cards = Array.from(lab.querySelectorAll("[data-review-card]"));
+  const dots = Array.from(lab.querySelectorAll("[data-review-dot]"));
+  const current = lab.querySelector("[data-review-current]");
+  const prev = lab.querySelector("[data-review-prev]");
+  const next = lab.querySelector("[data-review-next]");
+  const stack = lab.querySelector(".review-stack");
+  let active = 0;
+  let pointerStart = null;
+
+  const render = () => {
+    cards.forEach((card, index) => {
+      card.classList.toggle("is-active", index === active);
+      card.classList.toggle("is-prev", index === (active - 1 + cards.length) % cards.length);
+      card.classList.toggle("is-next", index === (active + 1) % cards.length);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === active);
+    });
+
+    if (current) current.textContent = String(active + 1).padStart(2, "0");
+  };
+
+  const move = (direction) => {
+    active = (active + direction + cards.length) % cards.length;
+    render();
+  };
+
+  prev?.addEventListener("click", () => move(-1));
+  next?.addEventListener("click", () => move(1));
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      active = index;
+      render();
+    });
+  });
+
+  stack?.addEventListener("pointerdown", (event) => {
+    pointerStart = event.clientX;
+  });
+
+  stack?.addEventListener("pointerup", (event) => {
+    if (pointerStart === null) return;
+    const distance = event.clientX - pointerStart;
+    pointerStart = null;
+
+    if (Math.abs(distance) > 45) move(distance > 0 ? -1 : 1);
+  });
+
+  stack?.addEventListener("pointercancel", () => {
+    pointerStart = null;
+  });
+
+  render();
+});
+
 const formatSelect = document.querySelector("#format-select");
 
 document.querySelectorAll("[data-format]").forEach((link) => {

@@ -373,20 +373,17 @@ h1 {
 }
 
 .principles article > span,
-.card-number,
-.proof-track article > span {
+.card-number {
   color: var(--cyan);
   font-size: 11px;
   font-weight: 900;
 }
 
-.principles h3,
-.proof-track h3 {
+.principles h3 {
   font-size: 18px;
 }
 
-.principles p,
-.proof-track p {
+.principles p {
   margin-top: 8px;
   color: var(--muted);
   font-size: 14px;
@@ -437,8 +434,7 @@ h1 {
   scrollbar-width: none;
 }
 
-.service-track::-webkit-scrollbar,
-.proof-track::-webkit-scrollbar {
+.service-track::-webkit-scrollbar {
   display: none;
 }
 
@@ -735,7 +731,7 @@ h1 {
 
 .photo-collage {
   position: relative;
-  height: 610px;
+  height: 520px;
   margin: 34px -24px 0;
 }
 
@@ -750,14 +746,14 @@ h1 {
   top: 0;
   left: 0;
   width: 72%;
-  height: 470px;
+  height: 410px;
 }
 
 .photo-collage figure:last-child {
   right: 0;
   bottom: 0;
   width: 56%;
-  height: 380px;
+  height: 330px;
 }
 
 .photo-collage img {
@@ -770,28 +766,153 @@ h1 {
   object-position: 56% center;
 }
 
-.proof-track {
+.review-lab {
+  position: relative;
+  margin-top: 34px;
+}
+
+.review-toolbar,
+.review-toolbar > div {
+  display: flex;
+  align-items: center;
+}
+
+.review-toolbar {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.review-toolbar > p {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.review-toolbar > p span {
+  color: var(--ink);
+}
+
+.review-toolbar > div {
+  gap: 8px;
+}
+
+.review-stack {
+  position: relative;
+  height: 750px;
+  perspective: 1100px;
+  touch-action: pan-y;
+}
+
+.review-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 90%;
+  height: 720px;
   display: grid;
-  grid-auto-columns: 78%;
-  grid-auto-flow: column;
-  gap: 10px;
-  margin: 28px -24px 0;
-  padding: 0 24px 8px;
-  overflow-x: auto;
-  scroll-snap-type: inline mandatory;
-  scrollbar-width: none;
+  grid-template-rows: minmax(0, 1fr) auto;
+  overflow: hidden;
+  border: 1px solid rgba(55, 212, 255, 0.2);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(55, 212, 255, 0.08), transparent 38%),
+    #071626;
+  box-shadow: 0 32px 68px rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  transform: translateX(-50%) translateZ(-120px) scale(0.86);
+  transition: opacity 300ms ease, transform 420ms ease;
+  pointer-events: none;
 }
 
-.proof-track article {
-  min-height: 180px;
-  padding: 20px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.035);
-  scroll-snap-align: start;
+.review-card::before {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(2, 10, 20, 0.76);
+  color: var(--cyan);
+  content: "LIVE FEEDBACK";
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
 }
 
-.proof-track h3 {
-  margin-top: 28px;
+.review-card.is-active {
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(-50%) translateZ(0) scale(1);
+  pointer-events: auto;
+}
+
+.review-card.is-prev {
+  z-index: 1;
+  opacity: 0.2;
+  transform: translateX(-112%) rotateY(28deg) translateZ(-90px) scale(0.82);
+}
+
+.review-card.is-next {
+  z-index: 1;
+  opacity: 0.2;
+  transform: translateX(12%) rotateY(-28deg) translateZ(-90px) scale(0.82);
+}
+
+.review-shot {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  overflow: hidden;
+  background: #020914;
+}
+
+.review-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.review-card figcaption {
+  min-height: 110px;
+  padding: 17px 18px 19px;
+  border-top: 1px solid var(--line);
+}
+
+.review-card figcaption span {
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.review-card blockquote {
+  margin: 9px 0 0;
+  color: #eef6ff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.review-dots button {
+  width: 24px;
+  height: 3px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.18);
+  transition: width 200ms ease, background-color 200ms ease;
+}
+
+.review-dots button.is-active {
+  width: 44px;
+  background: var(--cyan);
 }
 
 .fit {
@@ -1010,8 +1131,7 @@ footer > a:last-child {
     padding-left: 32px;
   }
 
-  .service-track,
-  .proof-track {
+  .service-track {
     margin-right: -32px;
     margin-left: -32px;
     padding-right: 32px;
@@ -1053,8 +1173,7 @@ footer > a:last-child {
     padding: 64px 18px;
   }
 
-  .service-track,
-  .proof-track {
+  .service-track {
     margin-right: -18px;
     margin-left: -18px;
     padding-right: 18px;
@@ -1079,6 +1198,15 @@ footer > a:last-child {
 
   .case-sheet {
     padding: 18px;
+  }
+
+  .review-stack {
+    height: 700px;
+  }
+
+  .review-card {
+    width: 94%;
+    height: 670px;
   }
 
   .case-sheet.is-prev,
