@@ -145,6 +145,7 @@ document.querySelectorAll("[data-format]").forEach((link) => {
 
 const form = document.querySelector("#lead-form");
 const formError = document.querySelector("#form-error");
+const telegramRecipient = "neon_usdx";
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -166,5 +167,16 @@ form?.addEventListener("submit", (event) => {
   if (formError) formError.textContent = "";
   const data = Object.fromEntries(new FormData(form).entries());
   sessionStorage.setItem("targetologyLead", JSON.stringify(data));
-  window.location.href = "thank-you.html";
+
+  const message = [
+    "Нова заявка із сайту Аліни Силки",
+    "",
+    `Ім’я та ніша: ${data.name}`,
+    `Сайт / Instagram: ${data.project_url}`,
+    `Рекламний бюджет: ${data.budget}`,
+    `Формат роботи: ${data.format}`,
+    `Telegram клієнта: ${data.telegram}`,
+  ].join("\n");
+
+  window.location.href = `https://t.me/${telegramRecipient}?text=${encodeURIComponent(message)}`;
 });
