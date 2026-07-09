@@ -111,7 +111,7 @@ summary {
 .hero-photo {
   z-index: -3;
   object-fit: cover;
-  object-position: 50% 36%;
+  object-position: 50% 40%;
 }
 
 .hero-shade {
@@ -1153,7 +1153,7 @@ footer > a:last-child {
   }
 
   .hero-photo {
-    object-position: 50% 30%;
+    object-position: 50% 36%;
   }
 
   .hero-copy {
