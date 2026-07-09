@@ -145,7 +145,7 @@ document.querySelectorAll("[data-format]").forEach((link) => {
 
 const form = document.querySelector("#lead-form");
 const formError = document.querySelector("#form-error");
-const telegramRecipient = "neon_usdx";
+const telegramRecipient = "SilkaAlina";
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
