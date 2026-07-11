@@ -31,7 +31,7 @@ body {
     linear-gradient(90deg, rgba(112, 161, 214, 0.035) 1px, transparent 1px) 0 0 / 88px 88px,
     linear-gradient(rgba(112, 161, 214, 0.035) 1px, transparent 1px) 0 0 / 88px 88px,
     var(--outside);
-  color: var(--cyan);
+  color: var(--ink);
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -212,8 +212,10 @@ h2 {
 h1 {
   max-width: 460px;
   margin-top: 13px;
+  color: var(--ink);
   font-size: clamp(39px, 9vw, 53px);
   line-height: 0.94;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.42);
   text-wrap: balance;
 }
 
