@@ -21,7 +21,7 @@
   <title>Аліна Силка — Meta Ads та Google Ads для бізнесу</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preload" href="assets/photos/hero-main.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css?v=20260714-review-side-nav">
+  <link rel="stylesheet" href="styles.css?v=20260714-form-order-arrows">
 </head>
 <body>
   <main class="page-shell" id="top">
@@ -168,29 +168,6 @@
       </div>
     </section>
 
-    <section class="speaker-band" aria-labelledby="speaker-title">
-      <img src="assets/photos/speaker.webp" alt="Аліна Силка — запрошена експертка та спікерка" loading="lazy" width="1200" height="1600">
-      <div class="speaker-shade" aria-hidden="true"></div>
-      <div class="speaker-copy">
-        <p class="eyebrow">Спікерство та навчання</p>
-        <h2 id="speaker-title">Шукаєте запрошену експертку чи спікерку?</h2>
-        <p>Виступаю для SMM-агенцій, закритих клубів, курсів і бізнес-спільнот. Ділюся практикою з ніш меблів, юридичних послуг, beauty та e-commerce — без «води».</p>
-        <a class="button button-primary" href="#application" data-format="Спікерство">Запросити як спікерку</a>
-      </div>
-    </section>
-
-    <section class="section budget-section" aria-labelledby="budget-title">
-      <div class="budget-orbit" aria-hidden="true">
-        <span>$600</span>
-      </div>
-      <div class="section-heading">
-        <p class="eyebrow">Чому бюджет від $600/міс.</p>
-        <h2 id="budget-title">Алгоритмам потрібні дані, а бізнесу — тверді висновки</h2>
-        <p>Цей поріг дає Meta та Google достатньо сигналів для навчання, а нам — базу для аналізу. Менші бюджети часто перетворюють тестування на випадковий набір дій, за яким складно ухвалювати рішення.</p>
-      </div>
-      <a class="button button-ghost" href="#application">Перевірити свій проєкт</a>
-    </section>
-
     <section class="section cases" id="cases" aria-labelledby="cases-title">
       <div class="section-heading">
         <p class="eyebrow">Звіти 2025–2026</p>
@@ -260,6 +237,29 @@
       </div>
 
       <a class="button button-primary centered" href="#application">Обговорити схожу задачу</a>
+    </section>
+
+    <section class="speaker-band" aria-labelledby="speaker-title">
+      <img src="assets/photos/speaker.webp" alt="Аліна Силка — запрошена експертка та спікерка" loading="lazy" width="1200" height="1600">
+      <div class="speaker-shade" aria-hidden="true"></div>
+      <div class="speaker-copy">
+        <p class="eyebrow">Спікерство та навчання</p>
+        <h2 id="speaker-title">Шукаєте запрошену експертку чи спікерку?</h2>
+        <p>Виступаю для SMM-агенцій, закритих клубів, курсів і бізнес-спільнот. Ділюся практикою з ніш меблів, юридичних послуг, beauty та e-commerce — без «води».</p>
+        <a class="button button-primary" href="#application" data-format="Спікерство">Запросити як спікерку</a>
+      </div>
+    </section>
+
+    <section class="section budget-section" aria-labelledby="budget-title">
+      <div class="budget-orbit" aria-hidden="true">
+        <span>$600</span>
+      </div>
+      <div class="section-heading">
+        <p class="eyebrow">Коротко про важливе</p>
+        <h2 id="budget-title">Алгоритмам потрібні дані, а бізнесу — тверді висновки</h2>
+        <p>Цей поріг дає Meta та Google достатньо сигналів для навчання, а нам — базу для аналізу. Менші бюджети часто перетворюють тестування на випадковий набір дій, за яким складно ухвалювати рішення.</p>
+      </div>
+      <a class="button button-ghost" href="#application">Перевірити свій проєкт</a>
     </section>
 
     <section class="section proof" id="reviews" aria-labelledby="proof-title">
@@ -390,7 +390,7 @@
     <section class="section faq" aria-labelledby="faq-title">
       <div class="section-heading">
         <p class="eyebrow">FAQ</p>
-        <h2 id="faq-title">Коротко про важливе</h2>
+        <h2 id="faq-title">Поширені питання</h2>
       </div>
       <div class="faq-list">
         <details>
@@ -412,43 +412,21 @@
       <div class="application-head">
         <p class="eyebrow">Почнемо з контексту</p>
         <h2 id="application-title">Розкажіть про свій проєкт</h2>
-        <p>П’ять коротких відповідей допоможуть одразу зрозуміти задачу й запропонувати доречний формат.</p>
+        <p>Три короткі відповіді допоможуть одразу зрозуміти задачу й підготувати перший крок для обговорення.</p>
       </div>
 
       <form class="quiz-form" id="lead-form" novalidate>
         <label>
-          <span>Ваше ім’я та ніша бізнесу</span>
-          <input type="text" name="name" autocomplete="name" placeholder="Наприклад, Олена — меблі" required>
+          <span>Ваше ім'я</span>
+          <input type="text" name="name" autocomplete="name" placeholder="Наприклад, Олена" required>
         </label>
         <label>
-          <span>Сайт або Instagram</span>
-          <input type="text" name="project_url" inputmode="url" placeholder="https://... або @username" required>
+          <span>Яка ніша ?</span>
+          <input type="text" name="niche" autocomplete="organization-title" placeholder="Наприклад, меблі, beauty, юридичні послуги" required>
         </label>
         <label>
-          <span>Місячний бюджет на рекламу</span>
-          <select name="budget" required>
-            <option value="">Оберіть діапазон</option>
-            <option>До $600</option>
-            <option>$600–1 500</option>
-            <option>$1 500–3 000</option>
-            <option>Понад $3 000</option>
-          </select>
-        </label>
-        <label>
-          <span>Який формат цікавить?</span>
-          <select name="format" id="format-select" required>
-            <option value="">Оберіть формат</option>
-            <option>Консультація</option>
-            <option>Аудит</option>
-            <option>Масштабування</option>
-            <option>Одноразовий запуск</option>
-            <option>Комплексний супровід</option>
-            <option>Спікерство</option>
-          </select>
-        </label>
-        <label>
-          <span>Ваш нік у Telegram</span>
-          <input type="text" name="telegram" autocomplete="off" placeholder="@username" required>
+          <span>Посилання на Instagram</span>
+          <input type="text" name="project_url" inputmode="url" placeholder="https://instagram.com/... або @username" required>
         </label>
         <p class="form-error" id="form-error" role="alert"></p>
         <button class="button button-primary submit-button" type="submit">Перейти в Telegram</button>

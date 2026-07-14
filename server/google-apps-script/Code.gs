@@ -31,7 +31,7 @@ function doPost(event) {
 }
 
 function handleLead_(lead) {
-  const fields = ["name", "project_url", "budget", "format", "telegram"];
+  const fields = ["name", "niche", "project_url"];
   fields.forEach((field) => {
     if (!String(lead[field] || "").trim()) {
       throw new Error(`Missing field: ${field}`);
@@ -43,7 +43,7 @@ function handleLead_(lead) {
   }
 
   const cache = CacheService.getScriptCache();
-  const rateKey = `lead:${String(lead.telegram).toLowerCase().slice(0, 80)}`;
+  const rateKey = `lead:${String(lead.project_url || lead.name).toLowerCase().slice(0, 80)}`;
   if (cache.get(rateKey)) {
     throw new Error("Please wait before submitting again");
   }
@@ -57,11 +57,9 @@ function handleLead_(lead) {
   const text = [
     "🆕 Нова заявка із сайту",
     "",
-    `👤 Ім’я та ніша: ${clean_(lead.name)}`,
-    `🔗 Сайт / Instagram: ${clean_(lead.project_url)}`,
-    `💳 Бюджет: ${clean_(lead.budget)}`,
-    `📌 Формат: ${clean_(lead.format)}`,
-    `✈️ Telegram клієнта: ${clean_(lead.telegram)}`,
+    `👤 Ім'я: ${clean_(lead.name)}`,
+    `🧭 Ніша: ${clean_(lead.niche)}`,
+    `🔗 Instagram: ${clean_(lead.project_url)}`,
   ].join("\n");
 
   sendTelegram_(ownerChatId, text);

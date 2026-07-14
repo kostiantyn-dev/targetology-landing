@@ -165,15 +165,6 @@ document.querySelectorAll("[data-review-lab]").forEach((lab) => {
   render();
 });
 
-const formatSelect = document.querySelector("#format-select");
-
-document.querySelectorAll("[data-format]").forEach((link) => {
-  link.addEventListener("click", () => {
-    const format = link.dataset.format;
-    if (formatSelect && format) formatSelect.value = format;
-  });
-});
-
 const form = document.querySelector("#lead-form");
 const formError = document.querySelector("#form-error");
 const telegramRecipient = "SilkaAlina";
@@ -202,11 +193,9 @@ form?.addEventListener("submit", (event) => {
   const message = [
     "Нова заявка із сайту Аліни Силки",
     "",
-    `Ім’я та ніша: ${data.name}`,
-    `Сайт / Instagram: ${data.project_url}`,
-    `Рекламний бюджет: ${data.budget}`,
-    `Формат роботи: ${data.format}`,
-    `Telegram клієнта: ${data.telegram}`,
+    `Ім'я: ${data.name}`,
+    `Ніша: ${data.niche}`,
+    `Instagram: ${data.project_url}`,
   ].join("\n");
 
   window.location.href = `https://t.me/${telegramRecipient}?text=${encodeURIComponent(message)}`;
