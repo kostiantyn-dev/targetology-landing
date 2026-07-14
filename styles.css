@@ -922,7 +922,7 @@ h1 {
 }
 
 .review-toolbar {
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 18px;
 }
 
@@ -934,6 +934,23 @@ h1 {
 
 .review-toolbar > p span {
   color: var(--ink);
+}
+
+.review-nav-button {
+  position: absolute;
+  z-index: 8;
+  top: 385px;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+}
+
+.review-prev {
+  left: 10px;
+}
+
+.review-next {
+  right: 10px;
 }
 
 .review-stack {
@@ -1382,6 +1399,21 @@ footer > a:last-child {
   .review-card {
     width: 94%;
     height: 670px;
+  }
+
+  .review-nav-button {
+    top: 348px;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+  }
+
+  .review-prev {
+    left: 4px;
+  }
+
+  .review-next {
+    right: 4px;
   }
 
   .case-sheet.is-prev,
