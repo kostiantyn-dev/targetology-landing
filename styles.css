@@ -805,15 +805,15 @@ h1 {
   position: absolute;
   z-index: 5;
   top: 50%;
-  width: 58px;
-  height: 58px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   border: 0;
   border-radius: 50%;
   background:
-    linear-gradient(135deg, rgba(55, 212, 255, 0.12), rgba(22, 104, 255, 0.08)),
-    rgba(2, 10, 20, 0.72);
-  box-shadow: inset 0 0 0 1px rgba(198, 220, 244, 0.13), 0 18px 42px rgba(0, 0, 0, 0.34);
+    linear-gradient(135deg, rgba(55, 212, 255, 0.08), rgba(22, 104, 255, 0.05)),
+    rgba(2, 10, 20, 0.54);
+  box-shadow: inset 0 0 0 1px rgba(55, 212, 255, 0.26), 0 10px 28px rgba(0, 0, 0, 0.24);
   color: transparent;
   font-size: 0;
   font-weight: 900;
@@ -826,7 +826,7 @@ h1 {
 .case-button::before {
   color: var(--cyan);
   content: "";
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -840,17 +840,17 @@ h1 {
 
 .case-button:hover {
   background:
-    linear-gradient(135deg, rgba(55, 212, 255, 0.22), rgba(22, 104, 255, 0.12)),
-    rgba(2, 10, 20, 0.8);
+    linear-gradient(135deg, rgba(55, 212, 255, 0.16), rgba(22, 104, 255, 0.08)),
+    rgba(2, 10, 20, 0.72);
   transform: translateY(-50%) scale(1.04);
 }
 
 .case-prev {
-  left: -15px;
+  left: -8px;
 }
 
 .case-next {
-  right: -15px;
+  right: -8px;
 }
 
 .centered {
@@ -1349,16 +1349,20 @@ footer > a:last-child {
   }
 
   .case-button {
-    width: 48px;
-    height: 48px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .case-button::before {
+    font-size: 18px;
   }
 
   .case-prev {
-    left: -8px;
+    left: -5px;
   }
 
   .case-next {
-    right: -8px;
+    right: -5px;
   }
 
   .review-stack {
