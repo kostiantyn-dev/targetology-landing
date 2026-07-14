@@ -53,7 +53,9 @@ document.querySelectorAll("[data-case-lab]").forEach((lab) => {
   const cards = Array.from(lab.querySelectorAll("[data-case-card]"));
   const prev = lab.querySelector("[data-case-prev]");
   const next = lab.querySelector("[data-case-next]");
+  const stack = lab.querySelector(".case-stack");
   let active = 0;
+  let pointerStart = null;
 
   const render = () => {
     cards.forEach((card, index) => {
@@ -63,14 +65,28 @@ document.querySelectorAll("[data-case-lab]").forEach((lab) => {
     });
   };
 
-  prev?.addEventListener("click", () => {
-    active = (active - 1 + cards.length) % cards.length;
+  const move = (direction) => {
+    active = (active + direction + cards.length) % cards.length;
     render();
+  };
+
+  prev?.addEventListener("click", () => move(-1));
+  next?.addEventListener("click", () => move(1));
+
+  stack?.addEventListener("pointerdown", (event) => {
+    pointerStart = event.clientX;
   });
 
-  next?.addEventListener("click", () => {
-    active = (active + 1) % cards.length;
-    render();
+  stack?.addEventListener("pointerup", (event) => {
+    if (pointerStart === null) return;
+    const distance = event.clientX - pointerStart;
+    pointerStart = null;
+
+    if (Math.abs(distance) > 45) move(distance > 0 ? -1 : 1);
+  });
+
+  stack?.addEventListener("pointercancel", () => {
+    pointerStart = null;
   });
 
   render();
