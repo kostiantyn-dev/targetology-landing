@@ -624,12 +624,11 @@ h1 {
 .case-lab {
   position: relative;
   margin-top: 34px;
-  padding-bottom: 58px;
 }
 
 .case-stack {
   position: relative;
-  min-height: 780px;
+  min-height: 640px;
   perspective: 1200px;
 }
 
@@ -638,7 +637,7 @@ h1 {
   inset: 0;
   display: grid;
   align-content: start;
-  padding: 24px;
+  padding: 22px;
   border-radius: var(--radius);
   background:
     linear-gradient(90deg, rgba(4, 24, 51, 0.055) 1px, transparent 1px) 0 0 / 34px 34px,
@@ -653,17 +652,17 @@ h1 {
 }
 
 .case-summary {
-  margin-top: 18px;
-  padding: 15px;
+  margin-top: 14px;
+  padding: 13px;
   border: 1px solid rgba(5, 31, 69, 0.12);
   background: rgba(22, 104, 255, 0.045);
 }
 
 .case-summary p {
   color: #27384d;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.42;
 }
 
 .case-stats {
@@ -674,7 +673,7 @@ h1 {
 }
 
 .case-stats p {
-  min-height: 78px;
+  min-height: 64px;
   display: grid;
   align-content: center;
   gap: 5px;
@@ -685,14 +684,14 @@ h1 {
 
 .case-stats span {
   color: #07295c;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
   line-height: 1.05;
 }
 
 .case-stats small {
   color: #667489;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
   line-height: 1.25;
   text-transform: uppercase;
@@ -730,7 +729,7 @@ h1 {
   margin-top: 7px;
   color: #07295c;
   font-family: Impact, "Arial Narrow", sans-serif;
-  font-size: clamp(38px, 11vw, 58px);
+  font-size: clamp(34px, 10vw, 50px);
   line-height: 0.92;
   text-transform: uppercase;
 }
@@ -762,14 +761,14 @@ h1 {
 
 .case-flow {
   display: grid;
-  gap: 7px;
-  margin-top: 12px;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 .case-flow p {
   display: grid;
   grid-template-columns: 28px 1fr;
-  padding: 10px;
+  padding: 8px 10px;
   border: 1px solid rgba(5, 31, 69, 0.12);
 }
 
@@ -781,19 +780,19 @@ h1 {
 }
 
 .case-flow strong {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .case-flow small {
   margin-top: 3px;
   color: #667489;
-  font-size: 10.5px;
-  line-height: 1.35;
+  font-size: 9.5px;
+  line-height: 1.3;
 }
 
 .case-quote {
-  margin-top: 12px;
-  padding: 13px 14px;
+  margin-top: 10px;
+  padding: 12px 14px;
   border-left: 3px solid #1767dc;
   background: #eaf2fc;
   color: #07295c;
@@ -805,37 +804,53 @@ h1 {
 .case-button {
   position: absolute;
   z-index: 5;
-  bottom: 0;
-  width: 84px;
-  height: 40px;
-  padding: 0 14px;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  padding: 0;
   border: 0;
-  border-radius: 5px;
+  border-radius: 50%;
   background:
     linear-gradient(135deg, rgba(55, 212, 255, 0.12), rgba(22, 104, 255, 0.08)),
     rgba(2, 10, 20, 0.72);
   box-shadow: inset 0 0 0 1px rgba(198, 220, 244, 0.13), 0 18px 42px rgba(0, 0, 0, 0.34);
-  color: var(--ink);
-  font-size: 10px;
+  color: transparent;
+  font-size: 0;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transform: translateY(-50%);
   transition: background 180ms ease, transform 180ms ease;
+}
+
+.case-button::before {
+  color: var(--cyan);
+  content: "";
+  font-size: 22px;
+  line-height: 1;
+}
+
+.case-prev::before {
+  content: "‹";
+}
+
+.case-next::before {
+  content: "›";
 }
 
 .case-button:hover {
   background:
     linear-gradient(135deg, rgba(55, 212, 255, 0.22), rgba(22, 104, 255, 0.12)),
     rgba(2, 10, 20, 0.8);
-  transform: translateY(-1px);
+  transform: translateY(-50%) scale(1.04);
 }
 
 .case-prev {
-  right: calc(50% + 6px);
+  left: -15px;
 }
 
 .case-next {
-  left: calc(50% + 6px);
+  right: -15px;
 }
 
 .centered {
@@ -1308,19 +1323,42 @@ footer > a:last-child {
   }
 
   .case-stack {
-    min-height: 860px;
+    min-height: 690px;
   }
 
   .case-sheet {
-    padding: 18px;
+    padding: 18px 16px;
   }
 
   .case-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
   }
 
   .case-stats p {
-    min-height: 62px;
+    min-height: 58px;
+    padding: 8px 6px;
+  }
+
+  .case-stats span {
+    font-size: 10px;
+  }
+
+  .case-stats small {
+    font-size: 7px;
+  }
+
+  .case-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .case-prev {
+    left: -8px;
+  }
+
+  .case-next {
+    right: -8px;
   }
 
   .review-stack {

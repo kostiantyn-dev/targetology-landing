@@ -78,13 +78,27 @@ document.querySelectorAll("[data-case-lab]").forEach((lab) => {
 
 document.querySelectorAll("[data-review-lab]").forEach((lab) => {
   const cards = Array.from(lab.querySelectorAll("[data-review-card]"));
-  const dots = Array.from(lab.querySelectorAll("[data-review-dot]"));
+  const dotsContainer = lab.querySelector(".review-dots");
+  let dots = Array.from(lab.querySelectorAll("[data-review-dot]"));
   const current = lab.querySelector("[data-review-current]");
+  const total = lab.querySelector("[data-review-total]");
   const prev = lab.querySelector("[data-review-prev]");
   const next = lab.querySelector("[data-review-next]");
   const stack = lab.querySelector(".review-stack");
   let active = 0;
   let pointerStart = null;
+
+  if (dotsContainer && dots.length !== cards.length) {
+    const buttons = cards.map((_, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.reviewDot = String(index);
+      button.setAttribute("aria-label", `Відгук ${index + 1}`);
+      return button;
+    });
+    dotsContainer.replaceChildren(...buttons);
+    dots = buttons;
+  }
 
   const render = () => {
     cards.forEach((card, index) => {
@@ -98,6 +112,7 @@ document.querySelectorAll("[data-review-lab]").forEach((lab) => {
     });
 
     if (current) current.textContent = String(active + 1).padStart(2, "0");
+    if (total) total.textContent = String(cards.length).padStart(2, "0");
   };
 
   const move = (direction) => {
