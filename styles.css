@@ -308,6 +308,35 @@ h1 {
   line-height: 1.55;
 }
 
+.search-context {
+  padding-top: 58px;
+  padding-bottom: 58px;
+  background:
+    linear-gradient(135deg, rgba(55, 212, 255, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(6, 22, 41, 0.92), var(--deep));
+}
+
+.search-context .section-heading h2 {
+  font-size: clamp(30px, 7vw, 42px);
+}
+
+.keyword-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.keyword-grid span {
+  padding: 10px 12px;
+  border: 1px solid rgba(55, 212, 255, 0.22);
+  background: rgba(2, 10, 20, 0.44);
+  color: #dbeaff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
 .approach {
   background:
     linear-gradient(160deg, transparent 54%, rgba(22, 104, 255, 0.12) 54.2%, transparent 54.6%),
