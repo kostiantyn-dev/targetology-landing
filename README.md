@@ -15,13 +15,13 @@
 
 ## Доступ
 
-Сторінка опублікована на GitHub Pages, але закрита від індексації:
+Сторінка опублікована на Cloudflare Pages і відкрита для індексації:
 
-- `noindex,nofollow` у метаданих;
-- `Disallow: /` у `robots.txt`;
-- окрема адреса, яку можна передавати напряму.
+- `index,follow` у метаданих;
+- `Allow: /` у `robots.txt`;
+- `sitemap.xml` для пошукових систем.
 
-Посилання: https://kostiantyn-dev.github.io/targetology-landing/
+Посилання: https://alina-silka.pages.dev/
 
 ## Локальний перегляд
 

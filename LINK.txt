@@ -1,7 +1,7 @@
 ONLINE:
-https://kostiantyn-dev.github.io/targetology-landing/
+https://alina-silka.pages.dev/
 
 LOCAL:
 http://127.0.0.1:4173/
 
-The online page is blocked from search indexing, but anyone with the exact URL can open it.
+The online page is open for Google indexing.
