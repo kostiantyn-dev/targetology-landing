@@ -21,7 +21,7 @@
   <title>Аліна Силка — Meta Ads та Google Ads для бізнесу</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preload" href="assets/photos/hero-main.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css?v=20260718-budget-choice">
+  <link rel="stylesheet" href="styles.css?v=20260718-dark-budget-select">
 </head>
 <body>
   <main class="page-shell" id="top">
@@ -420,21 +420,15 @@
           <span>Посилання на Instagram</span>
           <input type="text" name="project_url" inputmode="url" placeholder="https://instagram.com/... або @username" required>
         </label>
-        <fieldset class="budget-choice">
-          <legend>Бюджет на рекламу</legend>
-          <label>
-            <input type="radio" name="budget" value="від $600" required>
-            <span>від $600</span>
-          </label>
-          <label>
-            <input type="radio" name="budget" value="від $1000 і вище" required>
-            <span>від $1000 і вище</span>
-          </label>
-          <label>
-            <input type="radio" name="budget" value="від $2000 і вище" required>
-            <span>від $2000 і вище</span>
-          </label>
-        </fieldset>
+        <label class="select-field">
+          <span>Бюджет на рекламу</span>
+          <select name="budget" required>
+            <option value="">Оберіть бюджет</option>
+            <option>від $600</option>
+            <option>від $1000 і вище</option>
+            <option>від $2000 і вище</option>
+          </select>
+        </label>
         <p class="form-error" id="form-error" role="alert"></p>
         <button class="button button-primary submit-button" type="submit">Перейти в Telegram</button>
         <small>Telegram відкриється з готовою заявкою. Перевірте текст і натисніть «Надіслати».</small>
