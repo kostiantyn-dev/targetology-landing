@@ -31,7 +31,7 @@ function doPost(event) {
 }
 
 function handleLead_(lead) {
-  const fields = ["name", "niche", "project_url"];
+  const fields = ["name", "niche", "project_url", "budget"];
   fields.forEach((field) => {
     if (!String(lead[field] || "").trim()) {
       throw new Error(`Missing field: ${field}`);
@@ -60,6 +60,7 @@ function handleLead_(lead) {
     `👤 Ім'я: ${clean_(lead.name)}`,
     `🧭 Ніша: ${clean_(lead.niche)}`,
     `🔗 Instagram: ${clean_(lead.project_url)}`,
+    `💳 Бюджет: ${clean_(lead.budget)}`,
   ].join("\n");
 
   sendTelegram_(ownerChatId, text);

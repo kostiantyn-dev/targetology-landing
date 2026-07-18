@@ -196,6 +196,7 @@ form?.addEventListener("submit", (event) => {
     `Ім'я: ${data.name}`,
     `Ніша: ${data.niche}`,
     `Instagram: ${data.project_url}`,
+    `Бюджет: ${data.budget}`,
   ].join("\n");
 
   window.location.href = `https://t.me/${telegramRecipient}?text=${encodeURIComponent(message)}`;

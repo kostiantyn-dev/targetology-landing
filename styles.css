@@ -679,6 +679,15 @@ h1 {
   line-height: 1.42;
 }
 
+.case-period {
+  margin: 12px 0 -4px;
+  color: #1767dc;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .case-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1267,6 +1276,36 @@ footer > p {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-socials a {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(55, 212, 255, 0.34);
+  border-radius: 50%;
+  background: rgba(55, 212, 255, 0.06);
+  color: var(--cyan);
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.footer-socials a:hover {
+  border-color: rgba(55, 212, 255, 0.72);
+  background: rgba(55, 212, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 footer > a:last-child {
